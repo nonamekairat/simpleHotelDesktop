@@ -37,44 +37,47 @@
             // 
             // usernameBox
             // 
-            usernameBox.Location = new Point(347, 179);
+            usernameBox.Location = new Point(242, 132);
             usernameBox.Name = "usernameBox";
-            usernameBox.Size = new Size(125, 27);
+            usernameBox.Size = new Size(285, 27);
             usernameBox.TabIndex = 0;
             // 
             // passwordBox
             // 
-            passwordBox.Location = new Point(346, 227);
+            passwordBox.Location = new Point(242, 220);
             passwordBox.Name = "passwordBox";
             passwordBox.PasswordChar = '*';
-            passwordBox.Size = new Size(125, 27);
+            passwordBox.Size = new Size(285, 27);
             passwordBox.TabIndex = 1;
             // 
             // username
             // 
             username.AutoSize = true;
-            username.Location = new Point(268, 182);
+            username.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            username.Location = new Point(242, 92);
             username.Name = "username";
-            username.Size = new Size(73, 20);
+            username.Size = new Size(187, 26);
             username.TabIndex = 2;
-            username.Text = "username";
+            username.Text = "имя пользователя";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(268, 230);
+            label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(242, 186);
             label2.Name = "label2";
-            label2.Size = new Size(72, 20);
+            label2.Size = new Size(80, 26);
             label2.TabIndex = 3;
-            label2.Text = "password";
+            label2.Text = "Пароль";
             // 
             // loginButton
             // 
-            loginButton.Location = new Point(346, 292);
+            loginButton.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            loginButton.Location = new Point(312, 296);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(94, 29);
+            loginButton.Size = new Size(117, 47);
             loginButton.TabIndex = 4;
-            loginButton.Text = "login";
+            loginButton.Text = "Логин";
             loginButton.UseVisualStyleBackColor = true;
             loginButton.Click += loginButton_Click;
             // 

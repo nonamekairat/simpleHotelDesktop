@@ -82,7 +82,7 @@ namespace ThirdColloc.Repository
         {
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
-                string query = "INSERT INTO reservation (from_date, to_date, user_id, room_id) VALUES (@FromDate, @ToDate, @UserId, @RoomId)";
+                string query = "INSERT INTO reservation (from_date, to_date, name, user_id, room_id) VALUES (@FromDate, @ToDate, @Name, @UserId, @RoomId)";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@FromDate", reservation.FromDate);
@@ -100,7 +100,7 @@ namespace ThirdColloc.Repository
         {
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
-                string query = "UPDATE reservation SET from_date = @FromDate, to_date = @ToDate, user_id = @UserId, room_id = @RoomId WHERE id = @ReservationId";
+                string query = "UPDATE reservation SET from_date = @FromDate, to_date = @ToDate, name=@Name user_id = @UserId, room_id = @RoomId WHERE id = @ReservationId";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@FromDate", reservation.FromDate);
@@ -150,6 +150,39 @@ namespace ThirdColloc.Repository
                                 Id = Convert.ToInt32(reader["id"]),
                                 FromDate = Convert.ToDateTime(reader["from_date"]),
                                 ToDate = Convert.ToDateTime(reader["to_date"]),
+                                UserId = Convert.ToInt32(reader["user_id"]),
+                                RoomId = Convert.ToInt32(reader["room_id"])
+                            });
+                        }
+                    }
+                }
+            }
+
+            return reservations;
+        }
+
+
+        public List<Reservation> GetReservationsByUserId(int userId)
+        {
+            List<Reservation> reservations = new List<Reservation>();
+
+            using (MySqlConnection connection = new MySqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM reservation WHERE user_id = @UserId";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            reservations.Add(new Reservation
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                FromDate = Convert.ToDateTime(reader["from_date"]),
+                                ToDate = Convert.ToDateTime(reader["to_date"]),
+                                Name = Convert.ToString(reader["name"]),
                                 UserId = Convert.ToInt32(reader["user_id"]),
                                 RoomId = Convert.ToInt32(reader["room_id"])
                             });

@@ -33,6 +33,11 @@ namespace ThirdColloc.Service
             _reservationDAO.CreateReservation(reservation);
         }
 
+        public List<Reservation> GetAllReservationsByUserId(int userId)
+        {
+            return _reservationDAO.GetReservationsByUserId(userId);
+        }
+
         public void UpdateReservation(Reservation reservation)
         {
             _reservationDAO.UpdateReservation(reservation);

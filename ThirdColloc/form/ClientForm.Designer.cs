@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             table = new TableLayoutPanel();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -40,59 +39,49 @@
             label6 = new Label();
             label7 = new Label();
             searchButton = new Button();
+            showReservedButton = new Button();
             table.SuspendLayout();
             SuspendLayout();
             // 
             // table
             // 
             table.ColumnCount = 4;
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 133F));
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 299F));
-            table.Controls.Add(label4, 3, 0);
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.55073F));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.4492741F));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             table.Controls.Add(label3, 2, 0);
             table.Controls.Add(label2, 1, 0);
             table.Controls.Add(label1, 0, 0);
-            table.Location = new Point(30, 111);
+            table.Location = new Point(30, 105);
             table.Name = "table";
             table.RowCount = 2;
-            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            table.Size = new Size(763, 161);
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            table.RowStyles.Add(new RowStyle());
+            table.Size = new Size(733, 377);
             table.TabIndex = 0;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Dock = DockStyle.Fill;
-            label4.Location = new Point(466, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(294, 80);
-            label4.TabIndex = 3;
-            label4.Text = "Number of Guests";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            table.Paint += table_Paint;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
-            label3.Location = new Point(333, 0);
+            label3.Location = new Point(368, 0);
             label3.Name = "label3";
-            label3.Size = new Size(127, 80);
+            label3.Size = new Size(177, 40);
             label3.TabIndex = 2;
-            label3.Text = "Number of Guests";
+            label3.Text = "Количество мест";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
-            label2.Location = new Point(168, 0);
+            label2.Location = new Point(175, 0);
             label2.Name = "label2";
-            label2.Size = new Size(159, 80);
+            label2.Size = new Size(187, 40);
             label2.TabIndex = 1;
-            label2.Text = "Price";
+            label2.Text = "Цена";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -101,9 +90,9 @@
             label1.Dock = DockStyle.Fill;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(159, 80);
+            label1.Size = new Size(166, 40);
             label1.TabIndex = 0;
-            label1.Text = "Type";
+            label1.Text = "Тип";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click;
             // 
@@ -117,11 +106,12 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(30, 32);
+            label5.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(33, 22);
             label5.Name = "label5";
-            label5.Size = new Size(234, 20);
+            label5.Size = new Size(328, 26);
             label5.TabIndex = 1;
-            label5.Text = "All our Available Rooms for today";
+            label5.Text = "Все доступные номера на сегодня";
             // 
             // fromDatePicker
             // 
@@ -157,19 +147,32 @@
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(616, 61);
+            searchButton.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            searchButton.Location = new Point(669, 64);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(94, 29);
             searchButton.TabIndex = 6;
-            searchButton.Text = "search";
+            searchButton.Text = "поиск";
             searchButton.UseVisualStyleBackColor = true;
             searchButton.Click += searchButton_Click;
+            // 
+            // showReservedButton
+            // 
+            showReservedButton.Font = new Font("Showcard Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            showReservedButton.Location = new Point(441, 22);
+            showReservedButton.Name = "showReservedButton";
+            showReservedButton.Size = new Size(322, 29);
+            showReservedButton.TabIndex = 7;
+            showReservedButton.Text = "ваши зарезервированные номера";
+            showReservedButton.UseVisualStyleBackColor = true;
+            showReservedButton.Click += button1_Click_1;
             // 
             // ClientForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(818, 521);
+            ClientSize = new Size(815, 521);
+            Controls.Add(showReservedButton);
             Controls.Add(searchButton);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -192,7 +195,6 @@
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private Label label1;
         private Label label2;
-        private Label label4;
         private Label label3;
         private Label label5;
         private DateTimePicker fromDatePicker;
@@ -200,5 +202,6 @@
         private Label label6;
         private Label label7;
         private Button searchButton;
+        private Button showReservedButton;
     }
 }

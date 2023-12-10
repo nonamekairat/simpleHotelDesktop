@@ -16,8 +16,10 @@ namespace ThirdColloc
     {
 
         UserService _service;
-        public RegisterForm()
+        string type;
+        public RegisterForm(string type)
         {
+            this.type = type;
             _service = new UserService();
             InitializeComponent();
         }
@@ -25,21 +27,23 @@ namespace ThirdColloc
         private void registerButton_Click(object sender, EventArgs e)
         {
             string username = usernameBox.Text;
-            string password = passwordBox.Text; 
+            string password = passwordBox.Text;
             string confirmPassword = confirmPasswordBox.Text;
 
-            if(!(password == confirmPassword))
+            if (!(password == confirmPassword))
             {
                 // add labels that passwords don't match
                 return;
             }
-            if(_service.GetUserByUsername(username) != null)
+            if (_service.GetUserByUsername(username) != null)
             {
                 // add labels that username is already exists
                 return;
             }
-            
-            User user = new User(username, password, Roles.Client.ToString()); 
+
+
+
+            User user = new User(username, password, type);
             // make it for reception also later
 
             _service.RegisterUser(user);

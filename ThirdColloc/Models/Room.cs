@@ -13,5 +13,15 @@ namespace ThirdColloc.Models
         public RoomTypes Type { get; set; }
         public bool Reserved { get; set; }
         public decimal Price { get; set; }
+
+        public Room(int id, int number, RoomTypes type, bool reserved, decimal price)
+        {
+            Id = id;
+            Number = number;
+            Type = type;
+            Reserved = reserved;
+            Price = price;
+        }
+        public Room() { }
     }
 }

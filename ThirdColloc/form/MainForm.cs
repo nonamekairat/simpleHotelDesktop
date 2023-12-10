@@ -1,3 +1,5 @@
+using ThirdColloc.Models;
+
 namespace ThirdColloc
 {
     public partial class MainForm : Form
@@ -20,7 +22,7 @@ namespace ThirdColloc
         private void registerButton_Click(object sender, EventArgs e)
         {
             // Navigate to the login window
-            RegisterForm registerForm = new RegisterForm();
+            RegisterForm registerForm = new RegisterForm(Roles.Client.ToString());
             registerForm.Show();
 
             // Close the current window (if needed)

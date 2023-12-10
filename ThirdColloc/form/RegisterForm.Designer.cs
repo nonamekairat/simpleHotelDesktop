@@ -40,60 +40,64 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(271, 262);
+            label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(252, 242);
             label1.Name = "label1";
-            label1.Size = new Size(127, 20);
+            label1.Size = new Size(205, 26);
             label1.TabIndex = 11;
-            label1.Text = "confirm password";
+            label1.Text = "подтвердите пароль";
             // 
             // confirmPasswordBox
             // 
-            confirmPasswordBox.Location = new Point(404, 259);
+            confirmPasswordBox.Location = new Point(252, 281);
             confirmPasswordBox.Name = "confirmPasswordBox";
             confirmPasswordBox.PasswordChar = '*';
-            confirmPasswordBox.Size = new Size(125, 27);
+            confirmPasswordBox.Size = new Size(345, 27);
             confirmPasswordBox.TabIndex = 10;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(326, 215);
+            label2.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(252, 162);
             label2.Name = "label2";
-            label2.Size = new Size(72, 20);
+            label2.Size = new Size(77, 26);
             label2.TabIndex = 9;
-            label2.Text = "password";
+            label2.Text = "пароль";
             // 
             // username
             // 
             username.AutoSize = true;
-            username.Location = new Point(326, 167);
+            username.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            username.Location = new Point(252, 82);
             username.Name = "username";
-            username.Size = new Size(73, 20);
+            username.Size = new Size(187, 26);
             username.TabIndex = 8;
-            username.Text = "username";
+            username.Text = "имя пользователя";
             // 
             // passwordBox
             // 
-            passwordBox.Location = new Point(404, 212);
+            passwordBox.Location = new Point(252, 202);
             passwordBox.Name = "passwordBox";
             passwordBox.PasswordChar = '*';
-            passwordBox.Size = new Size(125, 27);
+            passwordBox.Size = new Size(345, 27);
             passwordBox.TabIndex = 7;
             // 
             // usernameBox
             // 
-            usernameBox.Location = new Point(405, 164);
+            usernameBox.Location = new Point(252, 122);
             usernameBox.Name = "usernameBox";
-            usernameBox.Size = new Size(125, 27);
+            usernameBox.Size = new Size(345, 27);
             usernameBox.TabIndex = 6;
             // 
             // registerButton
             // 
-            registerButton.Location = new Point(405, 312);
+            registerButton.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            registerButton.Location = new Point(328, 363);
             registerButton.Name = "registerButton";
-            registerButton.Size = new Size(94, 29);
+            registerButton.Size = new Size(192, 61);
             registerButton.TabIndex = 12;
-            registerButton.Text = "register";
+            registerButton.Text = "регистрация";
             registerButton.UseVisualStyleBackColor = true;
             registerButton.Click += registerButton_Click;
             // 

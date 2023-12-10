@@ -36,24 +36,24 @@ namespace ThirdColloc
             {
                 // add error labels
             }
-            else if(user.Role == Roles.Administrator.ToString())
+            else if (user.Role == Roles.Administrator.ToString())
             {
-                AdministratorForm administratorForm = new AdministratorForm();
+                AdministratorForm administratorForm = new AdministratorForm(user.Id);
                 administratorForm.Show();
 
                 this.Hide();
             }
-            else if(user.Role == Roles.Reception.ToString())
+            else if (user.Role == Roles.Reception.ToString())
             {
-                ReceptionForm receptionForm = new ReceptionForm();
+                ReceptionForm receptionForm = new ReceptionForm(user.Id);
                 receptionForm.Show();
 
                 this.Hide();
             }
-            else if(user.Role == Roles.Client.ToString())
+            else if (user.Role == Roles.Client.ToString())
             {
-                ClientForm clientForm = new ClientForm();
-                clientForm.Show();  
+                ClientForm clientForm = new ClientForm(user.Id);
+                clientForm.Show();
 
                 this.Hide();
             }
@@ -61,7 +61,7 @@ namespace ThirdColloc
             {
                 // wow, something really bad happened
             }
-            
+
         }
     }
 }

@@ -48,3 +48,6 @@ C:\Users\nonam\source\repos\ThirdColloc\ThirdColloc\obj\Debug\net6.0-windows\ref
 C:\Users\nonam\source\repos\ThirdColloc\ThirdColloc\obj\Debug\net6.0-windows\ThirdColloc.pdb
 C:\Users\nonam\source\repos\ThirdColloc\ThirdColloc\obj\Debug\net6.0-windows\ThirdColloc.genruntimeconfig.cache
 C:\Users\nonam\source\repos\ThirdColloc\ThirdColloc\obj\Debug\net6.0-windows\ref\ThirdColloc.dll
+C:\Users\nonam\source\repos\ThirdColloc\ThirdColloc\obj\Debug\net6.0-windows\ThirdColloc.FinishReservationForm.resources
+C:\Users\nonam\source\repos\ThirdColloc\ThirdColloc\obj\Debug\net6.0-windows\ThirdColloc.ReservedRoomsForm.resources
+C:\Users\nonam\source\repos\ThirdColloc\ThirdColloc\obj\Debug\net6.0-windows\ThirdColloc.form.RoomChangeForm.resources

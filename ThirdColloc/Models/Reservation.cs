@@ -14,5 +14,19 @@ namespace ThirdColloc.Models
         public DateTime ToDate { get; set; }
         public int UserId { get; set; }
         public int RoomId { get; set; }
+
+
+        public Reservation(DateTime fromDate, DateTime toDate, int userId, int roomId)
+        {
+            FromDate = fromDate;
+            ToDate = toDate;
+            UserId = userId;
+            RoomId = roomId;
+        }
+
+        public Reservation()
+        {
+            
+        }
     }
 }
